@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+	: _name(name), _grade(grade)
 {
 	if (_grade < TOP_GRADE)
 		throw GradeTooHighException();
@@ -10,7 +11,10 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
+Bureaucrat::Bureaucrat(const Bureaucrat &other)
+	: _name(other._name), _grade(other._grade)
+{
+}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
@@ -57,6 +61,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs)
 {
-	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return os;
 }
