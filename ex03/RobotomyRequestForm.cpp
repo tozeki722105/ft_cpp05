@@ -5,8 +5,8 @@
 
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target, const std::string &name)
-	: AForm(name, GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+	: AForm("RobotomyRequestForm", GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
 {
 }
 

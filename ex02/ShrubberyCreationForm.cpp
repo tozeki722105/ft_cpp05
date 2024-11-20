@@ -5,8 +5,8 @@
 
 #include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target, const std::string &name)
-	: AForm(name, GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+	: AForm("ShrubberyCreationForm", GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
 {
 }
 

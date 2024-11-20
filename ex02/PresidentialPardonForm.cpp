@@ -2,8 +2,8 @@
 
 #include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target, const std::string &name)
-	: AForm(name, GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: AForm("PresidentialPardonForm", GRADE_TO_SIGN, GRADE_TO_EXECUTE), _target(target)
 {
 }
 
