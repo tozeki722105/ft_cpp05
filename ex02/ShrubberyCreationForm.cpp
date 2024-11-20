@@ -32,7 +32,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 	std::ofstream ofs(_target + "_shrubbery");
 	if (!ofs)
-		throw std::ios_base::failure("Could not open file: " + _target + "_shrubbery");
+		throw std::ios_base::failure(_target + "_shrubbery");
 	ofs << "       _-_\n"
 		   "    /~~   ~~\\\n"
 		   " /~~         ~~\\\n"
