@@ -5,10 +5,7 @@
 #include "Bureaucrat.hpp"
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
-	: _name(name),
-	  _signed(false),
-	  _gradeToSign(gradeToSign),
-	  _gradeToExecute(gradeToExecute)
+	: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
 	if (_gradeToSign < TOP_GRADE || _gradeToExecute < TOP_GRADE)
 		throw GradeTooHighException();
@@ -49,7 +46,7 @@ int Form::getGradeToSign() const
 	return _gradeToSign;
 }
 
-int Form::getGradeToExecte() const
+int Form::getGradeToExecute() const
 {
 	return _gradeToExecute;
 }
@@ -63,12 +60,12 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return "Form Grade too high";
+	return "Grade too high";
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return "Form Grade too low";
+	return "Grade too low";
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &rhs)
@@ -76,6 +73,6 @@ std::ostream &operator<<(std::ostream &os, const Form &rhs)
 	os << rhs.getName() << " | is sined: " << std::setw(10) << std::left
 	   << (rhs.isSigned() ? "(signed)" : "(unsigned)")
 	   << " | grade to sign: " << rhs.getGradeToSign()
-	   << " | grade to execute: " << rhs.getGradeToExecte();
+	   << " | grade to execute: " << rhs.getGradeToExecute();
 	return os;
 }
