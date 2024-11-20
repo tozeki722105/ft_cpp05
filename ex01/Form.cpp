@@ -28,7 +28,7 @@ Form::Form(const Form &other)
 
 Form &Form::operator=(const Form &other)
 {
-	if (this != &other)
+	if (this == &other)
 		return *this;
 	_signed = other._signed;
 	return *this;
