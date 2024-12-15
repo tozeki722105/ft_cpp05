@@ -30,7 +30,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	this->checkExecutable(executor);
 
-	std::ofstream ofs(_target + "_shrubbery");
+	std::ofstream ofs((_target + "_shrubbery").c_str());
 	if (!ofs)
 		throw std::ios_base::failure(_target + "_shrubbery");
 	ofs << "       _-_\n"
